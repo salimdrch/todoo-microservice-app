@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: microservice-app-example-canary
+  name: zipkin-canary
+spec:
+  ports:
+  - port: 9411
+  selector:
+    service: zipkin-canary
+  type: LoadBalancer
