@@ -1,31 +1,51 @@
-# Deploy with Kubernetes
-Deploy the microservices with kubernetes.
-This part of the project requires you to have a running kubernetes cluster, for this demo we use [Minikube](https://github.com/kubernetes/minikube) and the [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+# OSS Applications
 
-## Building and running
-In order for Kubernetes to deploy from our images, they need to be available for it in the docker engine of the running node. Using Minikube we connect to the docker engine of the running node and build the images from the docker compose file.
-```shell
-# Start Minikube on your local machine
-$ minikube start
+This is a GitOps repo that acts as the source of truth for the open source team at Codefresh demoing GitOps apps. 
 
-# Connect the docker cli to the docker engine in the minikube node
-$ eval $(minikube docker-env)
+# Directory Structure
 
-# Build the images
-$ docker-compose build
+```bash
+├── README.md
+├── app-configs
+│   ├── Production
+│   ├── Staging
+│   └── README.md
+└── manifests
+    ├── README.md
+    ├── canary-deployment
+    │   
+    └── todoo-app
+        ├── base
+        │   ├── auth-api
+        │   ├── frontend
+        │   ├── log-message-processor
+        │   ├── redis-queue
+        │   ├── todos-api
+        │   ├── users-api
+        │   └── zipkin
+        ├── production
+        │   ├── auth-api
+        │   ├── frontend
+        │   ├── log-message-processor
+        │   ├── redis-queue
+        │   ├── todos-api
+        │   ├── users-api
+        │   └── zipkin
+        ├── staging
+        │   ├── auth-api
+        │   ├── frontend
+        │   ├── log-message-processor
+        │   ├── redis-queue
+        │   ├── todos-api
+        │   ├── users-api
+        │   └── zipkin
 ```
 
-Now that the images are built and available in the docker engine of the running minikube node, we can tell kubernetes to create pods from those images.
-```shell
-$ kubectl create -R -f k8s/
-```
 
-You can now access the frontend service on your browser like this:
-```shell
-$ minikube service frontend
-```
-
-To access Zipkin UI you can use this command:
-```shell
-$ minikube service zipkin
-```
+# Useful Links about Codefresh, Argo, and GitOps
+* [Codefresh GitOps](https://codefresh.io/product/)
+* [About Argo CD](https://codefresh.io/learn/argo-cd/)
+* [About Argo Rollouts](https://codefresh.io/learn/argo-rollouts/)
+* [About GitOps Directory Structures](https://codefresh.io/blog/how-to-model-your-gitops-environments-and-promote-releases-between-them/)
+* [Open GitOps](https://opengitops.dev/)
+* [GitOps Certification and Training for Argo CD](https://codefresh.io/argo/get-certified)
