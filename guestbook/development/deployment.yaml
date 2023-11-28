@@ -25,3 +25,6 @@ spec:
           requests:
             memory: 32Mi
             cpu: 5m
+        env:
+        - name: DEMO_TEST
+          value: "Hello from the environment"
