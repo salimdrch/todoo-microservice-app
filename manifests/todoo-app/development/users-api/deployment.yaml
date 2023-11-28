@@ -4,7 +4,7 @@ metadata:
   labels:
     app: microservice-app-example
   name: users-api
-  namespace: base
+  namespace: development
 spec:
   selector:
       matchLabels:

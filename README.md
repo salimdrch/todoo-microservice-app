@@ -15,7 +15,7 @@ This is a GitOps repo that acts as the source of truth for the open source team 
     ├── canary-deployment
     │   
     └── todoo-app
-        ├── base
+        ├── development
         │   ├── auth-api
         │   ├── frontend
         │   ├── log-message-processor

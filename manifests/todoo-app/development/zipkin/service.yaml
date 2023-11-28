@@ -3,10 +3,11 @@ kind: Service
 metadata:
   labels:
     app: microservice-app-example
-  name: todos-api
-  namespace: base
+  name: zipkin
+  namespace: development
 spec:
   ports:
-  - port: 8082
+  - port: 9411
   selector:
-    service: todos-api
+    service: zipkin
+  type: LoadBalancer

@@ -3,11 +3,10 @@ kind: Service
 metadata:
   labels:
     app: microservice-app-example
-  name: zipkin
-  namespace: base
+  name: redis-queue
+  namespace: development
 spec:
   ports:
-  - port: 9411
+  - port: 6379
   selector:
-    service: zipkin
-  type: LoadBalancer
+    service: redis-queue
