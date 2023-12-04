@@ -6,39 +6,29 @@ This is a GitOps repo that acts as the source of truth for the open source team 
 
 ```bash
 ├── README.md
-├── app-configs
-│   ├── Production
-│   ├── Staging
-│   └── README.md
-└── manifests
-    ├── README.md
-    ├── canary-deployment
-    │   
-    └── todoo-app
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    └── development
         ├── development
-        │   ├── auth-api
-        │   ├── frontend
-        │   ├── log-message-processor
-        │   ├── redis-queue
-        │   ├── todos-api
-        │   ├── users-api
-        │   └── zipkin
+        │   ├── deployment.yaml
+        │   ├── kustomization.yaml
+        │   ├── setting.yaml
+        │   └── version.yaml
         ├── production
-        │   ├── auth-api
-        │   ├── frontend
-        │   ├── log-message-processor
-        │   ├── redis-queue
-        │   ├── todos-api
-        │   ├── users-api
-        │   └── zipkin
+        │   ├── deployment.yaml
+        │   ├── kustomization.yaml
+        │   ├── setting.yaml
+        │   ├── replicas.yaml
+        │   └── version.yaml
         ├── staging
-        │   ├── auth-api
-        │   ├── frontend
-        │   ├── log-message-processor
-        │   ├── redis-queue
-        │   ├── todos-api
-        │   ├── users-api
-        │   └── zipkin
+        │   ├── deployment.yaml
+        │   ├── kustomization.yaml
+        │   ├── setting.yaml
+        │   ├── replicas.yaml
+        │   └── version.yaml
 ```
 
 
