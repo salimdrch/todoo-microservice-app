@@ -8,7 +8,7 @@ resources:
 - ../../base
 
 patchesStrategicMerge:
-- deployment.yml
-- version.yml
-- replicas.yml
-- settings.yml
+- deployment.yaml
+- version.yaml
+- replicas.yaml
+- settings.yaml
